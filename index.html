@@ -19,7 +19,6 @@
         <span class="brand-mark" aria-hidden="true">MÇ</span>
         <span class="brand-name">Mustafa Çelik<small>Real Estate</small></span>
       </a>
-      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="anaMenu">MENÜ</button>
       <nav class="main-nav" data-main-nav id="anaMenu" aria-label="Ana navigasyon">
         <a href="index.html" aria-current="page">Anasayfa</a>
         <a href="hakkimda.html">Hakkımda</a>
@@ -58,7 +57,65 @@
       </div>
     </section>
 
-    <section class="section teaser" aria-labelledby="teaserTitle">
+    <!-- Hakkımda — içerik: anasayfa/hakkımda.txt + anasayfa/hakkımda.jpg -->
+    <section class="section" aria-labelledby="hakkimdaBaslik">
+      <div class="wrap">
+        <div class="about-split">
+          <div class="about-photo">
+            <img src="anasayfa/hakk%C4%B1mda.jpg" alt="Mustafa Çelik" loading="lazy" onerror="this.closest('.about-photo').style.display='none'" />
+          </div>
+          <div class="about-text">
+            <p class="kicker">Hakkımda</p>
+            <h2 class="h2" id="hakkimdaBaslik">Ben <em>Mustafa Çelik.</em></h2>
+            <p><strong>Gayrimenkul Danışmanı | Ticari ve Lüks Konut Uzmanı | Uluslararası Yatırım Danışmanı</strong></p>
+            <p>10 yılı aşkın süredir gayrimenkul sektöründe, her biri farklı değerler taşıyan yatırım fırsatlarını doğru stratejilerle bir araya getiriyorum.</p>
+            <p>İstanbul genelinde yürüttüğüm çalışmalarımda arsa, ticari gayrimenkul, lüks konut, otel ve fabrika alanlarında çok sayıda başarılı satış ve kiralama sürecine imza attım.</p>
+            <p>Gayrimenkul benim için yalnızca bir iş değil; insanları doğru yatırımlarla buluşturmanın, güven inşa etmenin ve uzun vadeli ilişkiler kurmanın bir yoludur.</p>
+            <p style="margin-top:22px;display:flex;gap:12px;flex-wrap:wrap">
+              <a class="btn btn-gold" href="hakkimda.html">Devamını Oku →</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Emlak Sohbetleri — başlıklar dosya adından, linkler txt içeriğinden -->
+    <section class="section" style="padding-top:0" aria-labelledby="sohbetBaslik">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="kicker">Emlak Sohbetleri</p>
+            <h2 class="h2" id="sohbetBaslik">Sahadan <em>kısa notlar.</em></h2>
+          </div>
+          <p>Instagram paylaşımları — izlemek için dokunun, yeni sekmede açılır.</p>
+        </div>
+        <div class="hairline" aria-hidden="true"></div>
+        <div class="reels-grid">
+          <a class="reel-card" href="https://www.instagram.com/p/DPa7GdqiAE9/?utm_source=ig_embed&amp;utm_campaign=embed_video_watch_again" target="_blank" rel="noopener">
+            <span class="reel-play" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5-11-6.5Z"/></svg>
+            </span>
+            <span>
+              <h3>Ev satın alırken yapılan hatalar</h3>
+              <span>Instagram’da izle</span><br />
+              <span class="info-link">İzle →</span>
+            </span>
+          </a>
+          <a class="reel-card" href="https://www.instagram.com/reel/DPWSABTCGD2/?utm_source=ig_web_copy_link&amp;stkn=MzRlODBiNWFlZA==" target="_blank" rel="noopener">
+            <span class="reel-play" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5-11-6.5Z"/></svg>
+            </span>
+            <span>
+              <h3>Satış fiyatı belirleme</h3>
+              <span>Instagram’da izle</span><br />
+              <span class="info-link">İzle →</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section teaser" style="padding-top:0" aria-labelledby="teaserTitle">
       <div class="wrap">
         <div class="teaser-card">
           <p class="kicker">İletişim</p>
@@ -74,14 +131,12 @@
     </section>
   </main>
 
-  <!-- ============ FOOTER — compact icon system (secondary access) ============ -->
   <footer class="site-footer">
     <div class="wrap footer-inner">
       <div class="footer-grid">
         <div>
           <p class="footer-brand">Mustafa Çelik<small>Real Estate</small></p>
           <p class="footer-desc">Ticari ve lüks konut segmentinde yatırım odaklı gayrimenkul danışmanlığı.</p>
-          <!-- Footer icon row: ONLY channels that exist in iletişim bilgileri.txt -->
           <div class="icon-row" role="group" aria-label="Hızlı iletişim">
             <a class="icon-btn" href="https://www.instagram.com/mustafacelik.realestate?igsh=MWR5eW8xYXkxdjZ5eQ%3D%3D" target="_blank" rel="noopener" aria-label="Instagram">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.2" fill="currentColor" stroke="none"/></svg>
@@ -102,16 +157,6 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 10.5c0 6-8 11.5-8 11.5S4 16.5 4 10.5a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10.5" r="2.8"/></svg>
             </a>
           </div>
-          <p class="footer-addr">Tomtom, İstiklal Cd. Beyoğlu İş merkezi Kat 5, 34443 Beyoğlu/İstanbul</p>
-        </div>
-        <div>
-          <p class="footer-h">Site</p>
-          <ul class="footer-nav">
-            <li><a href="index.html">Anasayfa</a></li>
-            <li><a href="hakkimda.html">Hakkımda</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="iletisim/index.html">İletişim</a></li>
-          </ul>
         </div>
         <div>
           <p class="footer-h">Doğrudan Ulaşın</p>
@@ -121,10 +166,23 @@
             <li><a href="iletisim/index.html">İletişim Formu</a></li>
           </ul>
         </div>
+        <div>
+          <p class="footer-h">Adres</p>
+          <p class="footer-addr">Tomtom, İstiklal Cd.<br />Beyoğlu İş Merkezi Kat 5,<br />34443 Beyoğlu / İstanbul</p>
+        </div>
+        <div>
+          <p class="footer-h">Sayfalar</p>
+          <ul class="footer-nav pages">
+            <li><a href="index.html">Anasayfa</a></li>
+            <li><a href="hakkimda.html">Hakkımda</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="iletisim/index.html">İletişim</a></li>
+          </ul>
+        </div>
       </div>
       <div class="footer-bottom">
         <span>© <span data-year>2026</span> Mustafa Çelik Real Estate. Tüm hakları saklıdır.</span>
-        <span>İletişim bilgileri “iletişim bilgileri.txt” dosyasından alınmıştır.</span>
+        <span>Anasayfa içerikleri “anasayfa” klasöründeki dosyalardan alınmıştır.</span>
       </div>
     </div>
   </footer>
