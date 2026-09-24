@@ -35,7 +35,7 @@ body::before{
 }
 a{color:inherit}
 img{max-width:100%;display:block}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 48px;position:relative;z-index:1}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 64px;position:relative;z-index:1}
 .skip{position:absolute;left:-9999px;top:0;background:var(--gold);color:#111;padding:10px 16px;z-index:99;border-radius:0 0 10px 0}
 .skip:focus{left:0}
 
@@ -45,7 +45,7 @@ img{max-width:100%;display:block}
   background:rgba(11,11,13,.82);backdrop-filter:blur(14px);
   border-bottom:1px solid var(--line-soft);
 }
-.header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0}
+.header-inner{display:flex;flex-direction:column;align-items:center;gap:8px;padding:14px 0 12px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
 .brand-mark{
   width:38px;height:38px;border:1px solid var(--line);border-radius:50%;
@@ -54,7 +54,7 @@ img{max-width:100%;display:block}
 }
 .brand-name{font-family:var(--font-serif);font-size:18px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
 .brand-name small{display:block;font-family:var(--font-sans);font-size:9px;letter-spacing:.32em;color:var(--muted);margin-top:1px}
-.main-nav{display:flex;align-items:center;gap:4px;flex-wrap:nowrap}
+.main-nav{display:flex;align-items:center;justify-content:center;gap:4px;flex-wrap:wrap;width:100%}
 .main-nav a{
   text-decoration:none;font-size:12px;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;
   color:var(--muted);padding:12px 12px;border-radius:999px;border:1px solid transparent;
@@ -204,17 +204,18 @@ button.btn-gold{cursor:pointer;font-family:var(--font-sans)}
 .footer-h{font-size:11px;letter-spacing:.30em;text-transform:uppercase;color:var(--gold-2);margin:0 0 14px}
 .footer-nav{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px}
 .footer-nav a{color:var(--muted);text-decoration:none;font-size:14px;padding:8px 0;display:inline-block;min-height:44px}
+.footer-nav.tight a{padding:4px 0;min-height:32px}
 .footer-nav a:hover{color:var(--ivory)}
-.icon-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.icon-row{display:flex;align-items:center;gap:8px;flex-wrap:nowrap}
 .icon-btn{
-  width:48px;height:48px;border-radius:50%;display:grid;place-items:center;
+  width:40px;height:40px;flex:none;border-radius:50%;display:grid;place-items:center;
   border:1px solid var(--line-soft);color:#d8d2c6;text-decoration:none;
   transition:color .25s,border-color .25s,background .25s,transform .25s;
 }
-.icon-btn svg{width:20px;height:20px}
+.icon-btn svg{width:18px;height:18px}
 .icon-btn:hover{color:var(--gold-2);border-color:var(--line);background:rgba(200,162,90,.08);transform:translateY(-1px)}
 .icon-btn:focus-visible,.btn:focus-visible,.main-nav a:focus-visible,.info-link:focus-visible{outline:2px solid var(--gold-2);outline-offset:3px}
-.footer-bottom{border-top:1px solid var(--line-soft);padding-top:22px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--muted-2);font-size:13px}
+.footer-bottom{border-top:1px solid var(--line-soft);padding-top:22px;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;color:var(--muted-2);font-size:13px;text-align:center}
 .footer-addr{color:var(--muted);font-size:13px;margin-top:14px;max-width:44ch}
 
 /* ---------- Home teaser ---------- */
@@ -234,8 +235,8 @@ button.btn-gold{cursor:pointer;font-family:var(--font-sans)}
   .teaser-card{padding:36px 26px}
 }
 @media (max-width:640px){
-  .wrap{padding:0 18px}
-  .header-inner{gap:8px;padding:8px 0}
+  .wrap{padding:0 20px}
+  .header-inner{gap:6px;padding:12px 0 10px}
   .brand-mark{width:32px;height:32px;font-size:16px}
   .brand-name{font-size:14px;letter-spacing:.08em}
   .brand-name small{font-size:8px;letter-spacing:.26em}
@@ -253,7 +254,8 @@ button.btn-gold{cursor:pointer;font-family:var(--font-sans)}
   .btn{min-height:60px}
   form.contact-form{grid-template-columns:1fr}
   .form-panel,.aside-panel,.loc-card{padding:26px 20px}
-  .icon-btn{width:52px;height:52px}
+  .icon-btn{width:40px;height:40px}
+  .icon-btn svg{width:18px;height:18px}
   .section{padding:52px 0}
 }
 /* ---------- Blog: listing + detail ---------- */
