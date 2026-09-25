@@ -52,7 +52,7 @@ img{max-width:100%;display:block}
 .brand-logo{height:48px;width:auto;border-radius:12px;border:1px solid var(--line-soft);display:block;flex:none;background:#111}
 .brand-name{font-family:var(--font-serif);font-size:18px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
 .brand-name small{display:block;font-family:var(--font-sans);font-size:9px;letter-spacing:.32em;color:var(--muted);margin-top:1px}
-.main-nav{display:flex;align-items:center;justify-content:flex-start;gap:4px;flex-wrap:wrap;width:100%}
+.main-nav{display:flex;align-items:center;justify-content:center;gap:4px;flex-wrap:wrap;width:100%}
 .main-nav a{
   text-decoration:none;font-size:12px;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;
   color:var(--muted);padding:12px 12px;border-radius:999px;border:1px solid transparent;
@@ -240,7 +240,7 @@ button.btn-gold{cursor:pointer;font-family:var(--font-sans)}
   .brand-name{font-size:14px;letter-spacing:.08em}
   .brand-name small{font-size:8px;letter-spacing:.26em}
   .main-nav{
-    display:flex;position:static;flex-direction:row;align-items:center;justify-content:flex-start;
+    display:flex;position:static;flex-direction:row;align-items:center;justify-content:center;
     background:none;border:0;padding:0;gap:2px;flex-wrap:nowrap;overflow:visible;width:100%;
   }
   .main-nav::-webkit-scrollbar{display:none}
