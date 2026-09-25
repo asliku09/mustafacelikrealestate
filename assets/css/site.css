@@ -47,12 +47,12 @@ img{max-width:100%;display:block}
   background:rgba(250,246,239,.9);backdrop-filter:blur(14px);
   border-bottom:1px solid var(--line-soft);
 }
-.header-inner{display:flex;flex-direction:column;align-items:center;gap:8px;padding:14px 0 12px}
+.header-inner{display:flex;flex-direction:column;align-items:flex-start;gap:8px;padding:14px 0 12px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
 .brand-logo{height:48px;width:auto;border-radius:12px;border:1px solid var(--line-soft);display:block;flex:none;background:#111}
 .brand-name{font-family:var(--font-serif);font-size:18px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
 .brand-name small{display:block;font-family:var(--font-sans);font-size:9px;letter-spacing:.32em;color:var(--muted);margin-top:1px}
-.main-nav{display:flex;align-items:center;justify-content:center;gap:4px;flex-wrap:wrap;width:100%}
+.main-nav{display:flex;align-items:center;justify-content:flex-start;gap:4px;flex-wrap:wrap;width:100%}
 .main-nav a{
   text-decoration:none;font-size:12px;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;
   color:var(--muted);padding:12px 12px;border-radius:999px;border:1px solid transparent;
@@ -203,7 +203,7 @@ button.btn-gold{cursor:pointer;font-family:var(--font-sans)}
 .footer-h{font-size:11px;letter-spacing:.30em;text-transform:uppercase;color:var(--gold-2);margin:0 0 14px}
 .footer-nav{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px}
 .footer-nav a{color:var(--muted);text-decoration:none;font-size:14px;padding:8px 0;display:inline-block;min-height:44px}
-.footer-nav.tight a{padding:4px 0;min-height:32px}
+.footer-nav.tight a{padding:2px 0;min-height:28px}
 .footer-nav a:hover{color:var(--ivory)}
 .icon-row{display:flex;align-items:center;gap:8px;flex-wrap:nowrap}
 .icon-btn{
@@ -240,7 +240,7 @@ button.btn-gold{cursor:pointer;font-family:var(--font-sans)}
   .brand-name{font-size:14px;letter-spacing:.08em}
   .brand-name small{font-size:8px;letter-spacing:.26em}
   .main-nav{
-    display:flex;position:static;flex-direction:row;align-items:center;justify-content:center;
+    display:flex;position:static;flex-direction:row;align-items:center;justify-content:flex-start;
     background:none;border:0;padding:0;gap:2px;flex-wrap:nowrap;overflow:visible;width:100%;
   }
   .main-nav::-webkit-scrollbar{display:none}

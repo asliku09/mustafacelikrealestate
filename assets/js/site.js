@@ -1,22 +1,6 @@
-/* Shared interactions — nav + contact form (no fake backend) */
+/* Shared interactions — nav + contact form (sends via e-mail service) */
 (function () {
   "use strict";
-
-  // Mobile nav
-  var toggle = document.querySelector("[data-nav-toggle]");
-  var nav = document.querySelector("[data-main-nav]");
-  if (toggle && nav) {
-    toggle.addEventListener("click", function () {
-      var open = nav.classList.toggle("open");
-      toggle.setAttribute("aria-expanded", open ? "true" : "false");
-    });
-    nav.addEventListener("click", function (e) {
-      if (e.target.closest("a")) {
-        nav.classList.remove("open");
-        toggle.setAttribute("aria-expanded", "false");
-      }
-    });
-  }
 
   // Footer year
   document.querySelectorAll("[data-year]").forEach(function (el) {
@@ -24,14 +8,16 @@
   });
 
   // Contact form:
-  // No backend is connected. We validate locally and offer to continue
-  // via WhatsApp using ONLY the number/URL from "iletişim bilgileri.txt".
-  // TODO(backend): replace handlePendingSubmit() with fetch() to real endpoint.
+  // Sends to the address in data-email (from "iletişim bilgileri.txt")
+  // via the FormSubmit AJAX endpoint — no custom backend needed.
+  // NOTE: the mailbox owner must approve the one-time activation
+  // e-mail that FormSubmit sends after the very first submission.
   var form = document.querySelector("[data-contact-form]");
   if (!form) return;
 
   var status = form.querySelector("[data-form-status]");
   var WA_NUMBER = form.getAttribute("data-whatsapp-number") || "905323881072";
+  var EMAIL = form.getAttribute("data-email") || "";
 
   function setStatus(msg, kind) {
     if (!status) return;
@@ -42,6 +28,24 @@
 
   function isEmail(v) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+  }
+
+  function buildWaUrl(name, phone, email, topic, msg) {
+    return (
+      "https://api.whatsapp.com/send/?phone=" +
+      encodeURIComponent(WA_NUMBER) +
+      "&text=" +
+      encodeURIComponent(
+        "Merhaba, web sitesi iletişim formundan yazıyorum.\n\nAd Soyad: " +
+          name +
+          "\nTelefon: " +
+          phone +
+          (email ? "\nE-posta: " + email : "") +
+          (topic ? "\nKonu: " + topic : "") +
+          "\nMesaj: " +
+          msg
+      )
+    );
   }
 
   form.addEventListener("submit", function (e) {
@@ -73,33 +77,60 @@
       return;
     }
 
-    // Pending-backend state: do NOT claim delivery.
-    // Decode double-encoding guard: build carefully
-    var waUrl =
-      "https://api.whatsapp.com/send/?phone=" +
-      encodeURIComponent(WA_NUMBER) +
-      "&text=" +
-      encodeURIComponent(
-        "Merhaba, web sitesi iletişim formundan yazıyorum.\n\nAd Soyad: " +
-          name +
-          "\nTelefon: " +
-          phone +
-          (email ? "\nE-posta: " + email : "") +
-          (topic ? "\nKonu: " + topic : "") +
-          "\nMesaj: " +
-          msg
-      );
-
-    setStatus(
-      "Form alındı — henüz otomatik gönderim bağlı değil. Dilerseniz mesajınızı WhatsApp üzerinden iletebilirsiniz.",
-      "ok"
-    );
-
+    // WhatsApp alternative is always offered alongside e-mail sending.
     var waBtn = form.querySelector("[data-whatsapp-send]");
     if (waBtn) {
-      waBtn.href = waUrl;
+      waBtn.href = buildWaUrl(name, phone, email, topic, msg);
       waBtn.hidden = false;
-      waBtn.focus();
     }
+
+    if (!EMAIL) {
+      setStatus("E-posta adresi tanımlı değil. WhatsApp ile iletebilirsiniz.", "err");
+      if (waBtn) waBtn.focus();
+      return;
+    }
+
+    var btn = form.querySelector('[type="submit"]');
+    var orig = btn ? btn.textContent : "";
+    if (btn) {
+      btn.disabled = true;
+      btn.textContent = "Gönderiliyor...";
+    }
+    setStatus("Mesajınız gönderiliyor...", "");
+
+    fetch("https://formsubmit.co/ajax/" + encodeURIComponent(EMAIL), {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({
+        "Ad Soyad": name,
+        Telefon: phone,
+        "E-posta": email || "-",
+        Konu: topic || "-",
+        Mesaj: msg,
+        _subject: "Web sitesi iletişim formu: " + name,
+        _template: "table",
+        _captcha: "false"
+      })
+    })
+      .then(function (res) {
+        if (!res.ok) throw new Error("send-failed");
+        return res.json();
+      })
+      .then(function () {
+        setStatus("Mesajınız iletildi. En kısa sürede dönüş yapılacaktır.", "ok");
+        form.reset();
+        if (btn) {
+          btn.disabled = false;
+          btn.textContent = orig;
+        }
+      })
+      .catch(function () {
+        setStatus("E-posta gönderilemedi. Lütfen tekrar deneyin veya WhatsApp ile iletin.", "err");
+        if (btn) {
+          btn.disabled = false;
+          btn.textContent = orig;
+        }
+        if (waBtn) waBtn.focus();
+      });
   });
 })();

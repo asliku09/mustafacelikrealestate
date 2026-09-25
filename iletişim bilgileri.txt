@@ -9,3 +9,5 @@ https://api.whatsapp.com/send/?phone=905323881072&text&type=phone_number&app_abs
 https://api.whatsapp.com/send/?phone=905323881072&text&type=phone_number&app_absent=0
 
 Tomtom Mh. İstiklal Cd. Beyoğlu İş merkezi No:187 Kat 5, 34443 Beyoğlu/İstanbul
+
+m.celikrealestate@gmail.com
