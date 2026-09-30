@@ -276,6 +276,7 @@ button.btn-gold{cursor:pointer;font-family:var(--font-sans)}
 }
   .section-head{flex-direction:column;align-items:flex-start;gap:8px}
   .map-frame,.map-frame iframe,.map-frame .map-static img{min-height:300px}
+  #ofis-adresi{scroll-margin-top:130px}
   .map-open{font-size:10px;letter-spacing:.12em;padding:8px 12px;left:10px;top:10px;white-space:nowrap}
   .map-caption{font-size:11px;padding:8px 12px;right:10px;top:10px;white-space:nowrap}
 @media (max-width:380px){
