@@ -268,7 +268,7 @@ button.btn-gold{cursor:pointer;font-family:var(--font-sans)}
   .hero-bg img{object-position:top center}
   .hero-meta{flex-wrap:nowrap;justify-content:space-between;gap:4px;margin-top:22px}
   .hero-meta span{font-size:9.5px;letter-spacing:.12em;padding:6px 8px;min-width:0}
-  .hero-meta a{font-size:8px;letter-spacing:.03em;padding:7px 6px;min-width:0;min-height:0}
+  .hero-meta a{font-size:8.5px;letter-spacing:.04em;padding:8px 6px;min-width:0;min-height:0}
   .chip-br{display:none}
 @media (max-width:380px){
   .hero-meta{gap:3px}
