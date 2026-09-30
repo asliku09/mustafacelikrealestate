@@ -37,6 +37,9 @@
     if (!a) return;
     var id = a.getAttribute("href");
     if (!id || id.charAt(0) !== "#") return;
+    if (a.getAttribute("data-mobile-target") && window.matchMedia("(max-width: 640px)").matches) {
+      id = a.getAttribute("data-mobile-target");
+    }
     var el = document.querySelector(id);
     if (!el) return;
     ev.preventDefault();
