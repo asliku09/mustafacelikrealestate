@@ -31,6 +31,23 @@
     });
   }
 
+  // Centered smooth scroll for quick-access chips
+  document.addEventListener("click", function (ev) {
+    var a = ev.target.closest("[data-scroll-center]");
+    if (!a) return;
+    var id = a.getAttribute("href");
+    if (!id || id.charAt(0) !== "#") return;
+    var el = document.querySelector(id);
+    if (!el) return;
+    ev.preventDefault();
+    try {
+      el.scrollIntoView({ behavior: "smooth", block: "center" });
+    } catch (e) {
+      el.scrollIntoView();
+    }
+    history.replaceState(null, "", id);
+  });
+
   // Contact form:
   // Sends to the address in data-email (from "iletişim bilgileri.txt")
   // via the FormSubmit AJAX endpoint — no custom backend needed.

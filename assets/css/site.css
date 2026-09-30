@@ -87,6 +87,9 @@ img{max-width:100%;display:block}
 .hero p.lead{color:var(--muted);font-size:17px;max-width:62ch;margin:0}
 .hero-meta{display:flex;flex-wrap:nowrap;gap:10px;margin-top:26px}
 .hero-meta span{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line-soft);padding:8px 14px;border-radius:999px;white-space:nowrap}
+.hero-meta a{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line-soft);padding:8px 14px;border-radius:999px;white-space:nowrap;text-decoration:none;transition:color .25s,border-color .25s}
+.hero-meta a:hover{color:var(--gold-2);border-color:var(--line)}
+#telefon,#whatsapp,#instagram,#konum,#iletisim-formu{scroll-margin-top:110px}
 
 /* ---------- Direct actions ---------- */
 .direct{display:grid;grid-template-columns:1.2fr .9fr .9fr;gap:14px;margin:34px 0 8px}
@@ -261,8 +264,9 @@ button.btn-gold{cursor:pointer;font-family:var(--font-sans)}
   .main-nav::-webkit-scrollbar{display:none}
   .main-nav a{padding:8px 5px;min-height:40px;font-size:10px;letter-spacing:.08em;flex:none}
   .hero-bg img{object-position:top center}
-  .hero-meta{flex-wrap:nowrap;gap:6px;margin-top:22px}
+  .hero-meta{flex-wrap:nowrap;gap:4px;margin-top:22px}
   .hero-meta span{font-size:9.5px;letter-spacing:.12em;padding:6px 8px;min-width:0}
+  .hero-meta a{font-size:8px;letter-spacing:.04em;padding:8px 5px;min-width:0}
   .section-head{flex-direction:column;align-items:flex-start;gap:8px}
   .map-frame,.map-frame iframe,.map-frame .map-static img{min-height:300px}
   .map-open{font-size:10px;letter-spacing:.12em;padding:8px 12px;left:10px;top:10px;white-space:nowrap}
