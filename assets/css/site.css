@@ -236,20 +236,23 @@ button.btn-gold{cursor:pointer;font-family:var(--font-sans)}
   .teaser-card{padding:36px 26px}
 }
 @media (max-width:640px){
-  .wrap{padding:0 20px}
-  .header-inner{flex-direction:column;align-items:flex-start;gap:3px;padding:8px 0 6px}
+  .wrap{padding:0 22px}
+  .header-inner{flex-direction:column;align-items:flex-start;gap:6px;padding:10px 0 8px}
   .brand{gap:10px}
   .brand-logo{height:54px;border-radius:12px}
   .brand-name{font-size:20px;letter-spacing:.08em}
   .brand-name small{font-size:10px;letter-spacing:.26em}
   .main-nav{
-    display:flex;position:static;flex-direction:row;align-items:center;justify-content:center;
-    background:none;border:0;padding:0;gap:2px;flex-wrap:nowrap;overflow:visible;width:100%;
+    display:flex;position:static;flex-direction:row;align-items:center;justify-content:space-between;
+    background:none;border:0;padding:0 6px;gap:2px;flex-wrap:nowrap;overflow:visible;width:100%;
   }
   .main-nav::-webkit-scrollbar{display:none}
-  .main-nav a{padding:10px 6px;min-height:44px;font-size:10px;letter-spacing:.08em;flex:none}
-  .hero-meta{flex-wrap:nowrap;gap:8px;margin-top:22px}
-  .hero-meta span{font-size:10px;letter-spacing:.16em;padding:7px 9px;min-width:0}
+  .main-nav a{padding:8px 5px;min-height:40px;font-size:10px;letter-spacing:.08em;flex:none}
+  .hero-bg img{object-position:top center}
+  .hero-meta{flex-wrap:nowrap;gap:6px;margin-top:22px}
+  .hero-meta span{font-size:9.5px;letter-spacing:.12em;padding:6px 8px;min-width:0}
+  .section-head{flex-direction:column;align-items:flex-start;gap:8px}
+  .map-frame,.map-frame iframe{min-height:300px}
   .hero-inner{padding:64px 0 44px}
   .info-grid{grid-template-columns:1fr}
   .info-card.feature{grid-column:span 1}
@@ -272,6 +275,21 @@ button.btn-gold{cursor:pointer;font-family:var(--font-sans)}
 .chip:hover{color:var(--ivory);border-color:var(--line)}
 .chip[aria-pressed="true"]{color:#2a2112;background:linear-gradient(135deg,#d39e50,var(--gold-light));border-color:transparent}
 .filter-empty{margin:0 0 24px}
+
+/* ---------- Training list (line breaks preserved from source) ---------- */
+.edu-list{list-style:none;margin:0 0 22px;padding:0}
+.edu-list li{
+  position:relative;padding:11px 0 11px 24px;margin:0;
+  border-top:1px solid var(--line-soft);line-height:1.6;
+}
+.edu-list li:last-child{border-bottom:1px solid var(--line-soft)}
+.edu-list li::before{
+  content:"";position:absolute;left:2px;top:20px;width:14px;height:2px;background:var(--gold);
+}
+@media (max-width:640px){
+  .edu-list li{font-size:14.5px;line-height:1.65;padding:9px 0 9px 22px}
+  .edu-list li::before{top:18px}
+}
 
 /* Soft depth on light theme */
 .info-card,.post-card,.form-panel,.aside-panel,.loc-card,.teaser-card{
