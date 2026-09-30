@@ -90,6 +90,7 @@ img{max-width:100%;display:block}
 .hero-meta a{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line-soft);padding:8px 14px;border-radius:999px;white-space:nowrap;text-decoration:none;transition:color .25s,border-color .25s}
 .hero-meta a:hover{color:var(--gold-2);border-color:var(--line)}
 #telefon,#whatsapp,#instagram,#ofis-adresi,#iletisim-formu{scroll-margin-top:110px}
+#konumBaslik{scroll-margin-top:125px}
 
 /* ---------- Direct actions ---------- */
 .direct{display:grid;grid-template-columns:1.2fr .9fr .9fr;gap:14px;margin:34px 0 8px}

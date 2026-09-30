@@ -39,12 +39,15 @@
     if (!id || id.charAt(0) !== "#") return;
     if (a.getAttribute("data-mobile-target") && window.matchMedia("(max-width: 640px)").matches) {
       id = a.getAttribute("data-mobile-target");
+    } else if (a.getAttribute("data-desktop-target") && !window.matchMedia("(max-width: 640px)").matches) {
+      id = a.getAttribute("data-desktop-target");
     }
     var el = document.querySelector(id);
     if (!el) return;
     ev.preventDefault();
+    var block = a.getAttribute("data-scroll-block") || "center";
     try {
-      el.scrollIntoView({ behavior: "smooth", block: "center" });
+      el.scrollIntoView({ behavior: "smooth", block: block });
     } catch (e) {
       el.scrollIntoView();
     }
