@@ -97,6 +97,8 @@ img{max-width:100%;display:block}
   transition:transform .25s,border-color .25s,background .25s,color .25s;
 }
 .btn svg{width:20px;height:20px;flex:none}
+.btn-tel{line-height:1.7;text-align:center}
+.btn-tel strong{font-size:13px;letter-spacing:.12em;white-space:nowrap}
 .btn:hover{transform:translateY(-1px);border-color:var(--line)}
 .btn-gold{background:linear-gradient(135deg,#d39e50 0%,var(--gold-light) 55%,#d39e50 100%);color:#2a2112;border-color:transparent}
 .btn-gold:hover{filter:brightness(1.05)}
