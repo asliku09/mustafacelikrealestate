@@ -237,7 +237,7 @@ button.btn-gold{cursor:pointer;font-family:var(--font-sans)}
 }
 @media (max-width:640px){
   .wrap{padding:0 22px}
-  .header-inner{flex-direction:column;align-items:flex-start;gap:6px;padding:10px 0 8px}
+  .header-inner{flex-direction:column;align-items:flex-start;gap:6px;padding:10px 22px 8px}
   .brand{gap:10px}
   .brand-logo{height:54px;border-radius:12px}
   .brand-name{font-size:20px;letter-spacing:.08em}
