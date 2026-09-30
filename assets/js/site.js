@@ -7,6 +7,30 @@
     el.textContent = String(new Date().getFullYear());
   });
 
+  // Blog topic filter (listing page only)
+  var bar = document.querySelector("[data-filter-bar]");
+  if (bar) {
+    var btns = Array.prototype.slice.call(bar.querySelectorAll("[data-filter]"));
+    var cards = Array.prototype.slice.call(document.querySelectorAll("[data-tags]"));
+    var empty = document.querySelector("[data-filter-empty]");
+    bar.addEventListener("click", function (ev) {
+      var b = ev.target.closest("[data-filter]");
+      if (!b) return;
+      var f = b.getAttribute("data-filter");
+      btns.forEach(function (x) {
+        x.setAttribute("aria-pressed", x === b ? "true" : "false");
+      });
+      var n = 0;
+      cards.forEach(function (c) {
+        var tags = (c.getAttribute("data-tags") || "").split(" ");
+        var show = f === "all" || tags.indexOf(f) !== -1;
+        c.hidden = !show;
+        if (show) n++;
+      });
+      if (empty) empty.hidden = n !== 0;
+    });
+  }
+
   // Contact form:
   // Sends to the address in data-email (from "iletişim bilgileri.txt")
   // via the FormSubmit AJAX endpoint — no custom backend needed.

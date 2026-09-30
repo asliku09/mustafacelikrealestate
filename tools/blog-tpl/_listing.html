@@ -9,6 +9,17 @@
     <section class="section" aria-label="Blog yazıları">
       <div class="wrap">
         <div class="hairline" aria-hidden="true"></div>
+        <div class="filter-bar" data-filter-bar role="group" aria-label="Konuya göre filtrele">
+          <button class="chip" type="button" data-filter="all" aria-pressed="true">Tümü</button>
+          <button class="chip" type="button" data-filter="ticari" aria-pressed="false">Ticari</button>
+          <button class="chip" type="button" data-filter="luks" aria-pressed="false">Lüks Konut</button>
+          <button class="chip" type="button" data-filter="arsa" aria-pressed="false">Arsa</button>
+          <button class="chip" type="button" data-filter="global" aria-pressed="false">Global Pazarlar</button>
+          <button class="chip" type="button" data-filter="hukuk" aria-pressed="false">Hukuk &amp; Vergi</button>
+          <button class="chip" type="button" data-filter="kiralama" aria-pressed="false">Kiralama</button>
+          <button class="chip" type="button" data-filter="rehber" aria-pressed="false">Rehber</button>
+        </div>
+        <p class="filter-empty muted" data-filter-empty hidden>Bu konuda henüz yazı yok.</p>
         <div class="blog-grid">
 [[CARDS]]
         </div>

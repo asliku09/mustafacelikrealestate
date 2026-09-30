@@ -114,6 +114,32 @@ foreach ($f in $txtFiles) {
 
 if ($posts.Count -eq 0) { throw "no txt files found" }
 
+# topic tags per post slug (used by the listing filter)
+$tagMap = @{
+  "2025-te-istanbul-da-ticari-gayrimenkul-yatirimi-icin-en-degerli-bolgeler" = "ticari";
+  "arsa-yatirimi-mi-ticari-gayrimenkul-mu-karlilik-karsilastirmasi" = "arsa ticari";
+  "bogaz-hatti-nda-2025-gayrimenkul-trendleri" = "luks";
+  "doviz-kuru-ve-global-gayrimenkul-yatirimlarinin-k-rliliga-etkisi" = "global";
+  "dubai-de-gayrimenkul-yatirimi-yaparken-bilinmesi-gerekenler" = "global";
+  "ev-sahipligi-mi-yatirim-mi-luks-konutlarda-karar-verme-rehberi" = "luks";
+  "fabrika-ve-lojistik-alani-yatirimlarinda-dikkat-edilmesi-gereken-noktalar" = "ticari";
+  "hukuki-destekle-guvende-gayrimenkul-avukati-busra-kiraz-ile-riskleri-sifira-indiriyoruz" = "hukuk";
+  "ingiltere-de-turk-yatirimcilar-icin-konut-alim-sureci" = "global";
+  "istanbul-da-luks-konutlarda-deger-artisi-saglayan-7-kritik-detay" = "luks";
+  "istanbul-un-gelisen-bolgelerinde-ticari-deger-artisi-nasil-hesaplanir" = "ticari";
+  "kibris-ta-gayrimenkul-yatirimi-2025-trendleri-ve-2026-firsatlari" = "global";
+  "luks-konut-satin-alirken-gercek-degeri-nasil-belirlenir" = "luks";
+  "luks-konut-yatiriminda-prestij-faktoru-neden-onemlidir" = "luks";
+  "mimari-estetik-ile-yatirim-degeri-arasindaki-baglanti" = "luks";
+  "profesyonel-gayrimenkul-danismaniyla-calismanin-5-temel-avantaji" = "rehber";
+  "ticari-kiralamalarda-sozlesme-oncesi-risk-analizi-nasil-yapilir" = "kiralama hukuk";
+  "turkiye-kibris-dubai-ve-ingiltere-arasinda-gayrimenkul-yatirimi-karsilastirmasi" = "global ticari";
+  "turkiye-de-otel-yatirimlarinda-gozden-kacan-5-kritik-faktor" = "ticari";
+  "uluslararasi-gayrimenkul-yatirimlarinda-vergi-ve-hukuki-surecler" = "hukuk global";
+  "yabanci-yatirimcilar-icin-istanbul-un-en-prestijli-ve-sofistike-yasam-bolgeleri" = "luks";
+  "yeni-ofis-acacak-markalar-icin-dogru-lokasyon-secimi-nasil-yapilir" = "ticari"
+}
+
 # ---- templates ----
 $head = Read-Utf8 (Join-Path $tplDir "_head.html")
 $foot = Read-Utf8 (Join-Path $tplDir "_foot.html")
@@ -194,6 +220,9 @@ foreach ($p in $posts) {
   }
   $c = $cardTpl.Replace("[[URL]]", ("blog/" + $p.Slug + ".html"))
   $c = $c.Replace("[[IMG]]", $img)
+  $tags = ""
+  if ($tagMap.ContainsKey($p.Slug)) { $tags = $tagMap[$p.Slug] }
+  $c = $c.Replace("[[TAGS]]", $tags)
   $c = $c.Replace("[[TITLE]]", (Esc $p.Title))
   $c = $c.Replace("[[EXCERPT]]", (Esc $p.Excerpt))
   $c = $c.Replace("[[READTIME]]", "$($p.Mins)")
