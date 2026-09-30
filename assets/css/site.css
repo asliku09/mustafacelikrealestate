@@ -321,6 +321,18 @@ button.btn-gold{cursor:pointer;font-family:var(--font-sans)}
   .edu-list li::before{top:18px}
 }
 
+/* ---------- Back to top ---------- */
+.to-top{
+  position:fixed;right:18px;bottom:18px;width:48px;height:48px;border-radius:50%;
+  background:linear-gradient(135deg,#d39e50,var(--gold-light));border:1px solid var(--line);
+  color:#2a2112;display:grid;place-items:center;cursor:pointer;z-index:60;
+  opacity:0;visibility:hidden;transform:translateY(8px);
+  transition:opacity .3s,transform .3s,visibility .3s;
+  box-shadow:0 10px 26px rgba(74,56,24,.25);
+}
+.to-top svg{width:20px;height:20px}
+.to-top.show{opacity:1;visibility:visible;transform:none}
+
 /* Soft depth on light theme */
 .info-card,.post-card,.form-panel,.aside-panel,.loc-card,.teaser-card{
   box-shadow:0 12px 32px rgba(74,56,24,.07);

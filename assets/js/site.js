@@ -54,6 +54,27 @@
     history.replaceState(null, "", id);
   });
 
+  // Back to top button (all pages)
+  var toTop = document.querySelector("[data-to-top]");
+  if (toTop) {
+    var onScroll = function () {
+      if (window.scrollY > 600) {
+        toTop.classList.add("show");
+      } else {
+        toTop.classList.remove("show");
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    toTop.addEventListener("click", function () {
+      try {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } catch (e) {
+        window.scrollTo(0, 0);
+      }
+    });
+  }
+
   // Contact form:
   // Sends to the address in data-email (from "iletişim bilgileri.txt")
   // via the FormSubmit AJAX endpoint — no custom backend needed.
