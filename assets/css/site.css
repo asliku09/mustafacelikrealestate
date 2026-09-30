@@ -197,6 +197,12 @@ button.btn-gold{cursor:pointer;font-family:var(--font-sans)}
   position:absolute;right:14px;top:14px;background:rgba(255,255,255,.92);border:1px solid var(--line);
   padding:10px 14px;border-radius:12px;font-size:12.5px;letter-spacing:.04em;backdrop-filter:blur(8px);
 }
+.map-open{
+  position:absolute;left:14px;bottom:14px;background:rgba(255,255,255,.94);border:1px solid var(--line);
+  color:var(--gold-2);font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;
+  padding:11px 16px;border-radius:12px;text-decoration:none;backdrop-filter:blur(8px);
+}
+.map-open:hover{border-color:var(--gold)}
 
 /* ---------- Footer ---------- */
 .site-footer{border-top:1px solid var(--line-soft);background:#f0e8d8;margin-top:40px}
