@@ -39,8 +39,8 @@
         <span class="eyebrow">İletişim</span>
         <h1 id="iletisimBaslik">İLETİŞİME <em>GEÇELİM</em></h1>
         <p class="lead">Aşağıdaki kanallardan doğrudan ulaşabilir veya formu doldurabilirsiniz.</p>
-        <div class="hero-meta" aria-label="Öne çıkan kanallar">
-          <span>Telefon</span><span>WhatsApp</span><span>Instagram</span><span>Ofis — Beyoğlu</span>
+        <div class="hero-meta" aria-label="Hızlı erişim">
+          <a href="#telefon">Telefon</a><a href="#whatsapp">WhatsApp</a><a href="#instagram">Instagram</a><a href="#konum">Konum</a><a href="#iletisim-formu">İletişim Formu</a>
         </div>
 
         <!-- Direct contact actions: highly accessible -->
@@ -62,7 +62,36 @@
     </section>
 
     <!-- ============ 3. CONTACT FORM + 4. SOCIAL / DIRECT ============ -->
-    <section class="section" style="padding-top:0" aria-labelledby="formBaslik">
+    <!-- Hızlı erişim hedefleri -->
+    <section class="section" style="padding-top:40px;padding-bottom:0" aria-label="İletişim kanalları">
+      <div class="wrap">
+        <ul class="channel-list">
+          <li id="telefon">
+            <span class="ch-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z"/></svg>
+            </span>
+            <div><strong>Telefon</strong><span class="ch-val">+90 532 388 10 72</span></div>
+            <a class="ch-go" href="tel:+905323881072">Ara →</a>
+          </li>
+          <li id="whatsapp">
+            <span class="ch-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.5L3 21l2-5.4A8.5 8.5 0 1 1 21 11.5Z"/></svg>
+            </span>
+            <div><strong>WhatsApp</strong><span class="ch-val">WhatsApp hattı</span></div>
+            <a class="ch-go" href="https://api.whatsapp.com/send/?phone=905323881072&amp;text&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener">Sohbet →</a>
+          </li>
+          <li id="instagram">
+            <span class="ch-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.2" fill="currentColor" stroke="none"/></svg>
+            </span>
+            <div><strong>Instagram</strong><span class="ch-val">@mustafacelik.realestate</span></div>
+            <a class="ch-go" href="https://www.instagram.com/mustafacelik.realestate?igsh=MWR5eW8xYXkxdjZ5eQ%3D%3D" target="_blank" rel="noopener">Profil →</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="iletisim-formu" style="padding-top:0" aria-labelledby="formBaslik">
       <div class="wrap">
         <div class="section-head">
           <div>
@@ -121,7 +150,7 @@
     </section>
 
     <!-- ============ 5. LOCATION / MAP ============ -->
-    <section class="section" style="padding-top:0" aria-labelledby="konumBaslik">
+    <section class="section" id="konum" style="padding-top:0" aria-labelledby="konumBaslik">
       <div class="wrap">
         <div class="section-head">
           <div>
