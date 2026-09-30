@@ -47,12 +47,12 @@ img{max-width:100%;display:block}
   background:rgba(250,246,239,.9);backdrop-filter:blur(14px);
   border-bottom:1px solid var(--line-soft);
 }
-.header-inner{display:flex;flex-direction:column;align-items:flex-start;gap:4px;padding:10px 0 8px}
+.header-inner{display:flex;flex-direction:row;align-items:center;justify-content:space-between;gap:16px;padding:10px 0 8px}
 .brand{display:flex;align-items:center;gap:15px;text-decoration:none}
 .brand-logo{height:72px;width:auto;border-radius:18px;border:1px solid var(--line-soft);display:block;flex:none;background:#111}
 .brand-name{font-family:var(--font-serif);font-size:27px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
 .brand-name small{display:block;font-family:var(--font-sans);font-size:13px;letter-spacing:.32em;color:var(--muted);margin-top:2px}
-.main-nav{display:flex;align-items:center;justify-content:center;gap:4px;flex-wrap:wrap;width:100%}
+.main-nav{display:flex;align-items:center;justify-content:flex-end;gap:4px;flex-wrap:wrap;width:auto}
 .main-nav a{
   text-decoration:none;font-size:12px;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;
   color:var(--muted);padding:12px 12px;border-radius:999px;border:1px solid transparent;
@@ -237,7 +237,7 @@ button.btn-gold{cursor:pointer;font-family:var(--font-sans)}
 }
 @media (max-width:640px){
   .wrap{padding:0 20px}
-  .header-inner{gap:3px;padding:8px 0 6px}
+  .header-inner{flex-direction:column;align-items:flex-start;gap:3px;padding:8px 0 6px}
   .brand{gap:10px}
   .brand-logo{height:54px;border-radius:12px}
   .brand-name{font-size:20px;letter-spacing:.08em}
