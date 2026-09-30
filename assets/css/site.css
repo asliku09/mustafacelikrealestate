@@ -24,6 +24,7 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
+html,body{overflow-x:clip}
 body{
   margin:0;background:var(--bg);color:var(--ivory);
   font-family:var(--font-sans);font-size:16px;line-height:1.7;
@@ -243,8 +244,8 @@ button.btn-gold{cursor:pointer;font-family:var(--font-sans)}
   .brand-name{font-size:20px;letter-spacing:.08em}
   .brand-name small{font-size:10px;letter-spacing:.26em}
   .main-nav{
-    display:flex;position:static;flex-direction:row;align-items:center;justify-content:space-between;
-    background:none;border:0;padding:0 6px;gap:2px;flex-wrap:nowrap;overflow:visible;width:100%;
+    display:flex;position:static;flex-direction:row;align-items:center;justify-content:flex-start;
+    background:none;border:0;padding:0;gap:26px;flex-wrap:nowrap;overflow:visible;width:100%;
   }
   .main-nav::-webkit-scrollbar{display:none}
   .main-nav a{padding:8px 5px;min-height:40px;font-size:10px;letter-spacing:.08em;flex:none}
