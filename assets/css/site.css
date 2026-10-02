@@ -350,6 +350,9 @@ button.btn-gold{cursor:pointer;font-family:var(--font-sans)}
   display:flex;flex-direction:column;transition:border-color .25s,transform .25s;
 }
 .post-card:hover{border-color:var(--line);transform:translateY(-3px)}
+.post-card[hidden]{
+  display:none !important;
+}
 .post-media{display:block;overflow:hidden;aspect-ratio:16/10;background:#e7decd}
 .post-media img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;filter:saturate(.92)}
 .post-card:hover .post-media img{transform:scale(1.03)}
